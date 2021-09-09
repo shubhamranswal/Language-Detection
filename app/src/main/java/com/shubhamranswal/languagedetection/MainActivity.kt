@@ -7,6 +7,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.mlkit.nl.languageid.LanguageIdentification
 import com.google.mlkit.nl.languageid.LanguageIdentifier
+import org.w3c.dom.Text
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -40,7 +42,8 @@ class MainActivity : AppCompatActivity() {
                 if (languageCode == "und") {
                     tvResult.text = "Can't identify language."
                 } else {
-                    tvResult.text = "Language: $languageCode"
+                    val locale = Locale(languageCode)
+                    tvResult.text = "Language: ${locale.displayLanguage}"
                 }
             }
             .addOnFailureListener {
