@@ -50,6 +50,5 @@ class MainActivity : AppCompatActivity() {
                 tvResult.text = "Can't detect it. Reason ${it.message}"
             }
 
-
     }
 }
